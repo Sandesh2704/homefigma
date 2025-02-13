@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family:  sans-serif;
+}
+
+p{
+  color: #4b5563;
+}
+
+.border-text {
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke: 1px #00000045;
+}
