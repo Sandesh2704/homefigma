@@ -4,17 +4,17 @@ import { Suspense, lazy } from 'react';
 import Head from 'next/head';
 import AOS from "aos"
 import "aos/dist/aos.css"
-import Pricing from "@/section/Pricing";
-import Teachers from "@/section/Teachers";
-import Course from "@/section/Course";
-import Testimonial from "@/section/Testimonial"
-import Updates from "@/section/Updates";
-import FAQ from "@/section/FAQ";
+import Pricing from "../section/Pricing";
+import Teachers from "../section/Teachers";
+import Course from "../section/Course";
+import Testimonial from "../section/Testimonial"
+import Updates from "../section/Updates";
+import FAQ from "../section/FAQ";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import HeroSection2 from "@/section/HeroSection2";
-import HeroSection from "@/section/HeroSection";
-import Help from "@/section/Help";
+import HeroSection2 from "../section/HeroSection2";
+import HeroSection from "../section/HeroSection";
+import Help from "../section/Help";
 
 export default function Home() {
 

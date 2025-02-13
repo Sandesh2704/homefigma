@@ -33,6 +33,7 @@ export default function HeroSection() {
             <div className="grid xl:grid-cols-2 gap-14  overflow-hidden">
 
                 <div className=" lg:pr-10">
+                    <div className='pr-5 lg:pr-0'>
                     {splittedText.map((current, i) => (
                         <motion.span
                             key={i}
@@ -46,6 +47,8 @@ export default function HeroSection() {
                             {current === '' ? <span>&nbsp;</span> : current}
                         </motion.span>
                     ))}
+                    </div>
+                   
 
                     <p className="text-lg lg:text-xl leading-[1.8rem] lg:leading-[2rem] font-normal text-[#0A0A0A]/75 mt-2 mb-7"
                     >

@@ -46,7 +46,7 @@ export default function Help() {
 
                                 {/* Image Box */}
                                 <div
-                                    className={`relative w-full h-40 md:h-full ${index % 2 !== 0 ? "md:order-2" : "md:order-1"
+                                    className={`relative w-full h-40 md:h-full xl:h-56 ${index % 2 !== 0 ? "md:order-2" : "md:order-1"
                                         }`}
                                 >
                                     <Image

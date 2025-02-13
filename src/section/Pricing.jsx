@@ -79,7 +79,7 @@ const PricingCard = ({ plan }) => {
       </div>
 
       <button
-        className={`w-full mt-8 py-3 px-6 rounded-full font-medium text-lg md:text-xl ${plan.isPopular ? 'text-black bg-white' : ' bg-black text-white '} hover:opacity-90 transition-opacity`}
+        className={`w-full mt-8 py-3 px-6 rounded-full font-medium text-base md:text-xl ${plan.isPopular ? 'text-black bg-white' : ' bg-black text-white '} hover:opacity-90 transition-opacity`}
       >
         {plan.buttonText}
       </button>
