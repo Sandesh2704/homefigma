@@ -17,7 +17,7 @@ export default function Updates() {
 
                     <div className="grid xl:grid-cols-6 grid-rows-6  gap-x-4 md:gap-x-7 gap-y-6 mt-12 mb-4">
                         <div
-                            className="relative flex flex-col h-full overflow-hidden group w-full h-hull col-span-3 row-span-6"
+                            className="relative flex flex-col h-full overflow-hidden group w-full col-span-3 row-span-6"
                             data-aos="fade-up"
                             data-aos-duration="600"
                             data-aos-once="true"
@@ -31,7 +31,7 @@ export default function Updates() {
                                 className="w-full h-full md:h-[390px] rounded-b-3xl sm:rounded-b-none rounded-t-3xl  relative z-0"
                             />
 
-                            <div className='hidden md:flex flex-col border border-white/30 py-6 px-3'>
+                            <div className='hidden md:flex flex-col border h-full border-white/30 py-6 px-3'>
                                 <span className="text-gray-300 text-sm">{updates[0].date}</span>
                                 <div className='mt-1'>
                                     <SectionTitle title={updates[0].title} />
