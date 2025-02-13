@@ -43,10 +43,7 @@ export default function Home() {
           <Updates />
           <FAQ />
         </div>
-        {/* <Suspense fallback={<div>Loading...</div>}>
-     
-        
-        </Suspense> */}
+      
       </div>
     </>
   );
