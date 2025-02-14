@@ -13,7 +13,6 @@ export default function HeroSection2() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const splittedText = title.split(' ');
-
     const pullupVariant = {
         initial: { y: 20, opacity: 0 },
         animate: (i) => ({
@@ -57,7 +56,6 @@ export default function HeroSection2() {
                                 className="rounded-3xl object-cover w-full h-full col-span-2 row-span-2"
                             />
                         </div>
-
                         <div className="px-6 py-12 border border-[#01162780] h-full rounded-[32px] order-first xl:order-last"  >
                             <div className='xl:pr-5 mb-3'>
                                 <div className={`flex justify-center w-full`}>
@@ -78,7 +76,7 @@ export default function HeroSection2() {
                                     </p>
                                 </div>
                             </div>
-                            <p className="text-lg lg:text-xl leading-[1.8rem] lg:leading-[2rem] mb-7">
+                            <p className="text-lg lg:text-xl leading-[1.8rem] lg:leading-[2rem] mb-7 text-tertiary">
                                 Unlock limitless learning opportunities on our platform with a wide variety of online courses. Dive into
                                 different topics and grow your skills at your own pace.
                             </p>
@@ -91,10 +89,6 @@ export default function HeroSection2() {
                     </div>
                 </Section>
             </div>
-
-
         </>
     )
 }
-
-

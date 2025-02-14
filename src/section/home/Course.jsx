@@ -4,6 +4,7 @@ import courses from '@/deta/courses'
 import Image from 'next/image'
 import React from 'react'
 import SectionTitle from '@/components/sectiontitle'
+import Paragraph from '@/components/paragraph'
 export default function Course() {
     return (
         <>
@@ -20,8 +21,8 @@ export default function Course() {
                             key={index}>
                             <div className="flex flex-col xl:h-[340px]">
                                 <span className="text-[#011627BF] font-medium text-xl ">{items.instructor}</span>
-                                <div className="font-semibold text-2xl leading-9 md:w-80 mt-2">{items.title}</div>
-                                <p className="mt-2 text-lg leading-[1.8rem] text-black/75"> {items.description}</p>
+                                <h1 className="font-semibold text-2xl leading-9 md:w-80 my-2 ">{items.title}</h1>
+                                <Paragraph text={items.description}/>
                                 <span className="text-5xl lg:text-6xl font-semibold border-text my-6">{items.instructor2}</span>
                             </div>
                             <div className="flex flex-col mt-2">

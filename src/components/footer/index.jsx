@@ -13,7 +13,7 @@ const FooterLinks = ({ title, links }) => (
     <ul className="space-y-4">
       {links.map((link) => (
         <li key={link.name}>
-          <Link href={link.href} className="text-gray-400 hover:text-white transition-colors text-base" target={link.newTab ? "_blank" : "_self"}>
+          <Link href={link.href} className="text-gray-400 hover:text-white break-words transition-colors text-base" target={link.newTab ? "_blank" : "_self"}>
             {link.name}
           </Link>
         </li>
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4  gap-8 md:gap-10 py-12 border-y border-[#FFFFFF26]">
+        <div className="grid grid-cols-2 lg:grid-cols-4  gap-x-5 md:gap-x-10 gap-y-8 py-12 border-y border-[#FFFFFF26]">
           <FooterLinks title={footerData.navigation.title} links={footerData.navigation.links} />
           <FooterLinks title={footerData.socials.title} links={footerData.socials.links} />
           <FooterLinks title={footerData.legals.title} links={footerData.legals.links} />

@@ -35,7 +35,7 @@ const PricingCard = ({ plan }) => {
     <div className={`rounded-3xl   flex flex-col h-full lg:h-fit relative overflow-hidden w-full  px-6 py-8 ${plan.isPopular ? 'bg-[#011627]' : ' bg-white border border-[#011627] '}`}>
       {plan.isPopular && (
         <div className="flex gap-4 ">
-          <span className="bg-white text-black px-4 py-2 rounded-full text-base">
+          <span className="bg-white text-tertiary px-4 py-2 rounded-full text-base">
             Advance Plan
           </span>
           <span className="bg-[#FF3366] flex-1 w-full text-center text-white px-4 py-2 rounded-full text-base">
@@ -53,10 +53,10 @@ const PricingCard = ({ plan }) => {
 
       <div className="mt-9">
         <div className="text-5xl  flex items-baseline">
-          <span className={`font-semibold ${plan.isPopular ? 'text-gray-300' : 'text-gray-600'}`}>${plan.price}</span>
-          <span className={` ml-1 ${plan.isPopular ? 'text-gray-300' : 'text-gray-600'}`}>/month</span>
+          <span className={`font-semibold ${plan.isPopular ? 'text-gray-300' : 'text-gray-800'}`}>${plan.price}</span>
+          <span className={` ml-1 ${plan.isPopular ? 'text-gray-300' : 'text-gray-900'}`}>/month</span>
         </div>
-        <p className={`text-base lg:text-lg mt-5 ${plan.isPopular ? 'text-gray-300' : 'text-gray-600'}`}>
+        <p className={`text-base lg:text-lg mt-5 ${plan.isPopular ? 'text-gray-300' : 'text-tertiary'}`}>
           {plan.description}
         </p>
       </div>
@@ -70,7 +70,7 @@ const PricingCard = ({ plan }) => {
               ) : (
                 <RxCross2 className="bg-[#FF3366] text-white text-3xl p-2 flex-shrink-0 rounded-full" />
               )}
-              <span className={`text-base md:text-lg ${plan.isPopular ? 'text-white' : 'text-gray-700'}`}>
+              <span className={`text-base md:text-lg ${plan.isPopular ? 'text-white' : 'text-tertiary'}`}>
                 {feature.text}
               </span>
             </li>

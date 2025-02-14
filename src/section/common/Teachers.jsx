@@ -21,7 +21,7 @@ export default function Teachers() {
                                 className="relative group w-full sm:w-[48%] md:w-[42%] xl:w-[23%] h-[400px] lg:h-[442px] rounded-3xl border-2 border-[#FFFFFF]/60 overflow-hidden shadow-lg"
                             >
                                 <Image
-                                    src="/assests/teachers/99ebc2cfcc493a3bd27b587560aae365.jpg"
+                                    src={items.img || '/assests/teachers/99ebc2cfcc493a3bd27b587560aae365.jpg'}
                                     alt={items.name}
                                     height={1000}
                                     width={1000}

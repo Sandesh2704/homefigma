@@ -31,7 +31,6 @@ export default function HeroSection() {
     return (
         <Section>
             <div className="grid xl:grid-cols-2 gap-14  overflow-hidden">
-
                 <div className=" lg:pr-10">
                     <div className='pr-5 lg:pr-0'>
                     {splittedText.map((current, i) => (
@@ -48,9 +47,8 @@ export default function HeroSection() {
                         </motion.span>
                     ))}
                     </div>
-                   
 
-                    <p className="text-lg lg:text-xl leading-[1.8rem] lg:leading-[2rem] font-normal text-[#0A0A0A]/75 mt-2 mb-7"
+                    <p className="text-lg lg:text-xl leading-[1.8rem] lg:leading-[2rem] font-normal text-tertiary mt-2 mb-7"
                     >
                         Say goodbye to academic struggles and confusion. Our professional tutors ensure a personalized learning experience, empowering your child to excel every day.
                     </p>
@@ -77,11 +75,11 @@ export default function HeroSection() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-y-4 md:gap-y-6 gap-x-3 md:gap-x-4">
+                <div className="grid grid-cols-2 gap-y-4 md:gap-y-5 gap-x-3 md:gap-x-4">
                     <Image
                         src="/assests/heroSection/00bec2872c1d0f42d1c3565a5995a521.png"
                         alt="Main Teacher"
-                        className="rounded-3xl w-full h-[338px] object-cover col-span-2"
+                        className="rounded-3xl w-full h-[360px] object-cover col-span-2"
                         width={1000}
                         height={1000}
                         priority
