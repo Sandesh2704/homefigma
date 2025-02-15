@@ -1,63 +1,52 @@
 "use client"
+import Button from '@/components/button';
+import CheckboxList from '@/components/checkBoxlist';
 import PageHeader from '@/components/pageheader'
+import Paragraph from '@/components/paragraph';
 import Section from '@/components/section'
+import classcourses from '@/deta/class';
+import Image from 'next/image';
 import React, { useState } from 'react'
-import Button from '@/components/button'
-import Image from 'next/image'
-import Paragraph from '@/components/paragraph'
-import { BsSearch } from "react-icons/bs";
-import { FaRegFolder, FaStar } from "react-icons/fa"
-import { FaRegHeart } from "react-icons/fa6";
-import CheckboxList from '@/components/checkBoxlist'
-import classcourses from '@/deta/class'
-import WhyChoose from '@/section/common/WhyChoose'
+import { BsSearch } from 'react-icons/bs';
+import { FaRegFolder, FaRegHeart, FaStar } from 'react-icons/fa';
+
+export default function page() {
 
 
-export default function PageListing() {
-
-    const classTypes = ["All", "Default", "Onsite", "Online"];
-    const tutors = ["Joshua Brown", "John Smith", "Eliza Mic", "Holly Hunter", "Sammy King"];
+    const locations = ["All", "Default", "Onsite", "Online"];
+    const courses = ["Joshua Brown", "John Smith", "Eliza Mic", "Holly Hunter", "Sammy King"];
     const prices = ["All", "Free", "Paid"];
 
-    const [selectedClassTypes, setSelectedClassTypes] = useState([]);
-    const [selectedTutors, setSelectedTutors] = useState([]);
-    const [selectedPrices, setSelectedPrices] = useState([]);
-
-    const toggleItem = (listSetter, item) => {
-        listSetter((prev) =>
+        const [selectedLocations, setSelectedLocations] = useState([]);
+        const [selectedCourses, setSelectedCourses] = useState([]);
+        const [selectedPrices, setSelectedPrices] = useState([]);
+      
+        const toggleItem = (listSetter, item) => {
+          listSetter((prev) =>
             prev.includes(item) ? prev.filter((c) => c !== item) : [...prev, item]
-        );
-    };
+          );
+        };
+
 
     return (
         <>
-            <main>
-                <PageHeader title="Class Listing" />
-                <div>
-                    <Section>
+        <PageHeader title="Our Tutors"/>
+        <div>
+        <Section>
                         <div className='grid grid-cols-12 gap-6 xl:gap-8'>
 
-                            <div className='col-span-12 lg:col-span-3 grid  grid-cols-2 md:grid-cols-3 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
-                                <div className='flex flex-col gap-y-3 col-span-2 md:col-span-3'>
-                                    <h3 className="text-xl lg:text-2xl font-semibold">Search</h3>
-                                    <select className="flex text-base   items-center w-full gap-5  border order-[#00000033]/20 rounded-lg p-4 bg-transparent  placeholder:text-[#000000BF]/75 bg-none focus:ring-none focus:outline-none">
-                                        <option>Selected</option>
-                                        <option>Recent classes</option>
-                                        <option>Popular classes</option>
-                                        <option>Upcoming classes</option>
-                                    </select>
+                            <div className='col-span-12 lg:col-span-3 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
+                                <div className=''>
+                                    <CheckboxList title="Location" items={locations} selectedItems={selectedLocations} toggleItem={(item) => toggleItem(setSelectedLocations, item)} />
                                 </div>
 
-                                <div className='col-span-1 lg:col-span-3'>
-                                    <CheckboxList title="Class Type" items={classTypes} selectedItems={selectedClassTypes} toggleItem={(item) => toggleItem(setSelectedClassTypes, item)} />
+                                <div className=''>
+                                    <CheckboxList title="Course taught" items={courses} selectedItems={selectedCourses} toggleItem={(item) => toggleItem(setSelectedCourses, item)} />
                                 </div>
 
-                                <div className='col-span-1 lg:col-span-3'>
-                                    <CheckboxList title="Tutors" items={tutors} selectedItems={selectedTutors} toggleItem={(item) => toggleItem(setSelectedTutors, item)} />
-                                </div>
-
-                                <div className=' col-span-1 lg:col-span-3'>
-                                    <CheckboxList title="Price" items={prices} selectedItems={selectedPrices} toggleItem={(item) => toggleItem(setSelectedPrices, item)} />
+                                <div className=''>
+                                <CheckboxList title="Price" items={prices} selectedItems={selectedPrices} toggleItem={(item) => toggleItem(setSelectedPrices, item)} />
+  
                                 </div>
                             </div>
 
@@ -83,7 +72,7 @@ export default function PageListing() {
                                     </div>
                                 </div>
 
-                                <div className='flex flex-col gap-5'>
+                                <div className='grid grid-cols-3 gap-5'>
                                     {classcourses.map((items, index) => (
                                         <div key={index} className="rounded-3xl px-3 lg:px-6 py-3  lg:py-8 grid grid-cols-1 lg:grid-cols-2  gap-5 border  border-[#01162773]/45 hover:border-primary hover:border-b-8 hover:border-2 duration-150 ">
                                             <div className='px-2 lg:px-4 py-3.5 h-fit border border-[#01162773]/45 rounded-[18px]'>
@@ -98,7 +87,7 @@ export default function PageListing() {
                                                 <div className="lg:px-4 mt-4  flex  justify-between items-center gap-x-6 gap-y-3 sm:gap-0">
                                                     <div className="flex gap-2 text-2xl text-tertiary font-normal items-center">
                                                         <span><FaRegFolder /></span>
-                                                        <span>< FaRegHeart /></span>
+                                                        <span><FaRegHeart /></span>
                                                     </div>
 
                                                     <div className="flex gap-2 items-center ">
@@ -163,13 +152,7 @@ export default function PageListing() {
                             </div>
                         </div>
                     </Section>
-                </div>
-
-                <div>
-                    <WhyChoose/>
-                </div>
-            </main>
+        </div>
         </>
     )
 }
-
