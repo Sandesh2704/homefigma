@@ -8,7 +8,7 @@ export default function PageHeader({title}) {
                     className="absolute inset-0 bg-cover bg-center opacity-50"
                     style={{ backgroundImage: "url('/assests/header/header.jpg')" }}
                 ></div>
-                <h1 className="relative text-white text-5xl font-medium">{title}</h1>
+                <h1 className="relative text-white text-4xl lg:text-5xl font-medium">{title}</h1>
             </div>
         </div>
     )
