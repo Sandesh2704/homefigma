@@ -2,15 +2,15 @@
 import Button from '@/components/button';
 import CheckboxList from '@/components/checkBoxlist';
 import PageHeader from '@/components/pageheader'
-import Paragraph from '@/components/paragraph';
 import Section from '@/components/section'
 import SectionTitle from '@/components/sectiontitle';
-import classcourses from '@/deta/class';
 import team from '@/deta/team';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState } from 'react'
 import { BsSearch } from 'react-icons/bs';
-import { FaRegFolder, FaRegHeart, FaStar } from 'react-icons/fa';
+import { FaRegFolder, FaRegHeart, } from 'react-icons/fa';
+
 
 export default function page() {
 
@@ -38,18 +38,13 @@ export default function page() {
                     <div className='grid grid-cols-12 gap-6 xl:gap-8'>
 
                         <div className='col-span-12 lg:col-span-3 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
-                            <div className=''>
-                                <CheckboxList title="Location" items={locations} selectedItems={selectedLocations} toggleItem={(item) => toggleItem(setSelectedLocations, item)} />
-                            </div>
 
-                            <div className=''>
-                                <CheckboxList title="Course taught" items={courses} selectedItems={selectedCourses} toggleItem={(item) => toggleItem(setSelectedCourses, item)} />
-                            </div>
+                            <CheckboxList title="Location" items={locations} selectedItems={selectedLocations} toggleItem={(item) => toggleItem(setSelectedLocations, item)} />
 
-                            <div className=''>
-                                <CheckboxList title="Price" items={prices} selectedItems={selectedPrices} toggleItem={(item) => toggleItem(setSelectedPrices, item)} />
+                            <CheckboxList title="Course taught" items={courses} selectedItems={selectedCourses} toggleItem={(item) => toggleItem(setSelectedCourses, item)} />
 
-                            </div>
+                            <CheckboxList title="Price" items={prices} selectedItems={selectedPrices} toggleItem={(item) => toggleItem(setSelectedPrices, item)} />
+
                         </div>
 
                         <div className='col-span-12 lg:col-span-9 xl:col-span-9 flex flex-col gap-5   w-full xl:p-2 h-full'>
@@ -75,17 +70,25 @@ export default function page() {
 
                             <div className='grid md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5'>
                                 {team.map((items, index) => (
-                                    <div key={index} className="rounded-3xl px-3 lg:px-[18px] py-3  lg:py-[22px] border  border-[#01162773]/45 hover:border-primary hover:border-b-8 hover:border-2 duration-150 ">
+                                    <div key={index} className="rounded-3xl px-3 lg:px-[18px] py-3  lg:py-[22px] border  border-[#01162773]/45 hover:border-primary hover:border-b-8 hover:border-2 duration-150 group">
                                         <div className='relative'>
                                             <Image
                                                 src={items.img}
                                                 alt={items.name}
-                                                className="w-full h-[302px] object-cover rounded-2xl"
+                                                className="w-full x-0 h-[302px] object-cover rounded-2xl"
                                                 width={200}
                                                 height={100}
                                                 priority />
-                                            <div className="absolute ">
-
+                                            <div className="absolute z-10 flex justify-around bottom-4 left-0 w-full opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                                                {items.social.map((item, index) => (
+                                                    <Link
+                                                        href={item.link}
+                                                        key={index}
+                                                        className='bg-primary text-white rounded-xl text-2xl p-3'
+                                                    >
+                                                        {item.icon}
+                                                    </Link>
+                                                ))}
                                             </div>
                                         </div>
 
@@ -93,6 +96,8 @@ export default function page() {
                                         <div className='text-center flex flex-col gap-y-2 mt-4'>
                                             <h2 className="text-xl lg:text-2xl font-semibold">{items.name}</h2>
                                             <h3 className='text-base md:text-lg font-normal'>{items.role}</h3>
+
+
                                         </div>
                                     </div>
                                 ))}
@@ -113,18 +118,16 @@ export default function page() {
                             priority />
                         <div className='order-first md:order-last h-full flex items-center'>
                             <div>
-                            <SectionTitle title="Join Us " />
-
-
+                                <SectionTitle title="Join Us " />
                                 <p className=' text-white  text-base md:text-[18px] leading-[1.8rem] mt-5 mb-10'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-    </p>
-           
-                            <button>
-                                <Button title="Appy Within" />
-                            </button>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                </p>
+
+                                <button>
+                                    <Button title="Appy Within" />
+                                </button>
                             </div>
-                         
+
                         </div>
                     </div>
                 </Section>
