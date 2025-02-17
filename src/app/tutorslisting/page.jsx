@@ -35,9 +35,9 @@ export default function page() {
                 <PageHeader title="Our Tutors" />
 
                 <Section>
-                    <div className='grid grid-cols-12 gap-6 xl:gap-8'>
+                    <div className='flex flex-col lg:flex-row  gap-y-8 gap-x-5'>
 
-                        <div className='col-span-12 lg:col-span-3 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
+                        <div className='w-full lg:w-60 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
 
                             <CheckboxList title="Location" items={locations} selectedItems={selectedLocations} toggleItem={(item) => toggleItem(setSelectedLocations, item)} />
 
@@ -47,7 +47,7 @@ export default function page() {
 
                         </div>
 
-                        <div className='col-span-12 lg:col-span-9 xl:col-span-9 flex flex-col gap-5   w-full xl:p-2 h-full'>
+                        <div className='flex flex-1  flex-col gap-5   w-full xl:p-2 h-full'>
                             <div className='py-[22px] px-[18px] bg-[#F5F5F5] rounded-lg gap-5  grid md:grid-cols-2'>
                                 <div className='flex  items-center w-full gap-5  border rounded-lg px-6 py-4'>
                                     <input type=""
@@ -68,9 +68,9 @@ export default function page() {
                                 </div>
                             </div>
 
-                            <div className='grid md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5'>
+                            <div className='grid md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-x-4 gap-y-5'>
                                 {team.map((items, index) => (
-                                    <div key={index} className="rounded-3xl px-3 lg:px-[18px] py-3  lg:py-[22px] border  border-[#01162773]/45 hover:border-primary hover:border-b-8 hover:border-2 duration-150 group">
+                                    <div key={index} className="rounded-3xl px-2 lg:px-3 py-3  lg:py-[22px] border  border-[#01162773]/45 hover:border-primary hover:border-b-8 hover:border-2 duration-150 group">
                                         <div className='relative'>
                                             <Image
                                                 src={items.img}
@@ -93,11 +93,9 @@ export default function page() {
                                         </div>
 
 
-                                        <div className='text-center flex flex-col gap-y-2 mt-4'>
-                                            <h2 className="text-xl lg:text-2xl font-semibold">{items.name}</h2>
-                                            <h3 className='text-base md:text-lg font-normal'>{items.role}</h3>
-
-
+                                        <div className='text-center flex flex-col gap-y-2 mt-2'>
+                                            <h2 className="text-lg lg:text-xl font-semibold">{items.name}</h2>
+                                            <h3 className='text-base text-tertiary font-normal'>{items.role}</h3>
                                         </div>
                                     </div>
                                 ))}
@@ -119,7 +117,7 @@ export default function page() {
                         <div className='order-first md:order-last h-full flex items-center'>
                             <div>
                                 <SectionTitle title="Join Us " />
-                                <p className=' text-white  text-base md:text-[18px] leading-[1.8rem] mt-5 mb-10'>
+                                <p className=' text-white  text-base  leading-[1.8rem] mt-5 mb-10'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                                 </p>
 

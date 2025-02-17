@@ -41,7 +41,7 @@ export default function Blog() {
                 <PageHeader title="Blog" />
                 <div>
                     <Section>
-                        <div className='grid grid-cols-12 gap-6 xl:gap-8'>
+                        <div className='grid grid-cols-12 gap-x-8 gap-y-9'>
                             <div className='col-span-12 lg:col-span-4 xl:col-span-3 grid  md:grid-cols-2 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
 
                                 <div className='flex flex-col gap-y-3 col-span-2'>

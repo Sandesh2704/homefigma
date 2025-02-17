@@ -54,11 +54,9 @@ export default function Course() {
     return (
         <>
             <Section color='#F5F5F5'>
-                <div className="flex justify-center overflow-hidden">
-                    <div className="md:w-96 text-center">
+                    <div className="text-center">
                         <SectionTitle title="Explore our most sought-after courses" black={true} />
                     </div>
-                </div>
 
                 <div className="w-full flex flex-wrap justify-center lg:justify-between gap-7 lg:gap-0 mt-8">
                     {courses.map((items, index) => (

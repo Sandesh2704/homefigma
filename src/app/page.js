@@ -32,7 +32,7 @@ export default function Home() {
 
       <div>
         <div>
-        <HeroSection />
+          <HeroSection />
           <HeroSection2 />
           <Course />
           <Testimonial />

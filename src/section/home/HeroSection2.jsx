@@ -57,9 +57,9 @@ export default function HeroSection2() {
                             />
                         </div>
                         <div className="px-6 py-12 border border-[#01162780] h-full rounded-[32px] order-first xl:order-last"  >
-                            <div className='xl:pr-5 mb-3'>
+                            <div className='xl:pr-5 mb-4'>
                                 <div className={`flex justify-center w-full`}>
-                                    <p className={` text-balance text-black text-[37px] leading-[3rem]   font-[600] `}>
+                                    <p className={` text-balance text-black text-[35px] leading-[3rem]   font-[600] `}>
                                         {splittedText.map((current, i) => (
                                             <motion.span
                                                 key={i}
@@ -76,7 +76,7 @@ export default function HeroSection2() {
                                     </p>
                                 </div>
                             </div>
-                            <p className="text-lg leading-[2rem]  mb-7 text-tertiary">
+                            <p className="text-[17px] leading-[1.8rem]  mb-7 text-tertiary">
                                 Unlock limitless learning opportunities on our platform with a wide variety of online courses. Dive into
                                 different topics and grow your skills at your own pace.
                             </p>

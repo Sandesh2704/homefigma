@@ -42,7 +42,7 @@ export default function Page() {
 
   return (
     <Section>
-      <div className="w-full 2xl:w-8/12 mx-auto p-12 bg-white border">
+      <div className="w-full mx-auto p-12 bg-white border">
         <div className="relative flex items-center mb-6">
           {steps.map((step) => (
             <div key={step.id} className="flex flex-col items-center w-full relative">

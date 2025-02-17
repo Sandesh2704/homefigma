@@ -41,14 +41,14 @@ export default function HeroSection() {
                             initial="initial"
                             animate={isInView ? 'animate' : ''}
                             custom={i}
-                            className="text-[37px] leading-[3rem]  font-[600]   pr-2  inline-block"
+                            className="text-[35px] leading-[3rem]  font-[600]   pr-2  inline-block"
                         >
                             {current === '' ? <span>&nbsp;</span> : current}
                         </motion.span>
                     ))}
                     </div>
 
-                    <p className="text-lg leading-[2rem]  font-normal text-tertiary mt-3 mb-6"
+                    <p className="text-[17px] leading-[1.8rem]  font-normal text-tertiary mt-3 mb-6"
                     >
                         Say goodbye to academic struggles and confusion. Our professional tutors ensure a personalized learning experience, empowering your child to excel every day.
                     </p>

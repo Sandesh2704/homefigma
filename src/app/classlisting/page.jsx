@@ -35,9 +35,9 @@ export default function PageListing() {
                 <PageHeader title="Class Listing" />
                 <div>
                     <Section>
-                        <div className='grid grid-cols-12 gap-6 xl:gap-8'>
+                        <div className='flex flex-col lg:flex-row  gap-y-8 gap-x-5'>
 
-                            <div className='col-span-12 lg:col-span-3 grid  grid-cols-2 md:grid-cols-3 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
+                            <div className='w-full lg:w-60 grid  grid-cols-2 md:grid-cols-3 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
                                 <div className='flex flex-col gap-y-3 col-span-2 md:col-span-3'>
                                     <h3 className="text-xl lg:text-2xl font-semibold">Search</h3>
                                     <select className="flex text-base   items-center w-full gap-5  border order-[#00000033]/20 rounded-lg p-4 bg-transparent  placeholder:text-[#000000BF]/75 bg-none focus:ring-none focus:outline-none">
@@ -61,7 +61,7 @@ export default function PageListing() {
                                 </div>
                             </div>
 
-                            <div className='col-span-12 lg:col-span-9 xl:col-span-9 flex flex-col gap-5   w-full xl:p-2 h-full'>
+                            <div className='flex flex-1 flex-col gap-5   w-full xl:p-2 h-full'>
                                 <div className='py-[22px] px-[18px] bg-[#F5F5F5] rounded-lg gap-5  grid md:grid-cols-2'>
                                     <div className='flex  items-center w-full gap-5  border rounded-lg px-6 py-4'>
                                         <input type=""
@@ -112,12 +112,12 @@ export default function PageListing() {
 
 
                                             <div className='md:px-4 py-3.5'>
-                                                <h2 className="text-xl lg:text-2xl font-semibold mb-4">{items.title}</h2>
-                                                <Paragraph text={items.description} fontlarg={true} />
+                                                <h2 className="text-xl font-semibold mb-4">{items.title}</h2>
+                                                <Paragraph text={items.description}  />
 
                                                 <div className="flex items-center gap-3 mt-5">
                                                     <span className="text-xl font-medium">{items.rating}</span>
-                                                    <div className=" flex items-center text-xl text-yellow-500">
+                                                    <div className=" flex items-center text-lg text-yellow-500">
                                                         <FaStar />
                                                         <FaStar />
                                                         <FaStar />

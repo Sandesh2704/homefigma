@@ -74,7 +74,7 @@ export default function page() {
         <>
             <main>
                 <Section>
-                    <div className='grid grid-cols-12 gap-y-12 gap-x-4 2xl:gap-x-8 md:px-20 lg:px-0  xl:px-0 2xl:px-20 '>
+                    <div className='grid grid-cols-12 gap-y-12 gap-x-4 2xl:gap-x-8  '>
                         <div className='col-span-12 lg:col-span-7 w-full '>
                             <div className='w-full flex justify-center'>
                                 <div className="md:w-10/12 xl:w-8/12 text-center flex flex-col gap-3">
@@ -195,7 +195,7 @@ export default function page() {
                 </Section>
 
                 <Section>
-                    <div className='md:px-10 xl:px-20'>
+                    <div>
                         <FaqComponent />
                     </div>
                 </Section>

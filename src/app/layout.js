@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import NavBar from '../components/navbar';  // If using alias
 import Footer from '../components/footer';
+import NavbarPopup from "@/components/popup";
 
 
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         <NavBar />
 
         {children}
+        <NavbarPopup/>
         <Footer />
       </body>
     </html>

@@ -15,7 +15,7 @@ export default function Help() {
                     <div className="flex flex-col gap-y-10 mx-auto mt-12">
                         {services.map((item, index) => (
                             <div
-                                className="relative grid md:grid-cols-2 gap-y-5 md:gap-x-16 xl:gap-x-36 items-center lg:justify-center"
+                                className="relative grid md:grid-cols-2 gap-y-5 md:gap-x-24 xl:gap-x-36 items-center lg:justify-center"
                                 key={index}
                                 data-aos="fade-up"
 

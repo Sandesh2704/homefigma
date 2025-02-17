@@ -13,7 +13,7 @@ export default function WhyChoose() {
                     </div>
                 </div>
 
-                <div className="grid xl:grid-cols-2 py-10 gap-8 items-center">
+                <div className="grid xl:grid-cols-2 xl:pb-10 mt-10 gap-6 items-center">
                     <div className="grid grid-cols-2 ">
                         {whychoose.images.map((img, index) => (
                             <Image
@@ -31,7 +31,7 @@ export default function WhyChoose() {
                         {whychoose.features.map((feature, index) => (
                             <div key={index} className="flex items-center gap-x-3">
                                 <span className={`text-xl p-4 text-white rounded-full ${feature.iconbg}`}>{feature.icon}</span>
-                                <span className="text-2xl  font-normal">{feature.text}</span>
+                                <span className=" text-xl  font-normal">{feature.text}</span>
                             </div>
                         ))}
                     </div>

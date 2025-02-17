@@ -66,7 +66,7 @@ export default function page() {
         <PageHeader title="Contact Us" />
 
         <Section>
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-x-3 xl:gap-x-8 gap-y-6  md:gap-y-3   xl:px-10 ">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-x-3 xl:gap-x-8 gap-y-6  md:gap-y-3">
             {cardData.map((item, index) => (
               <div key={index} className={`px-6 py-8 rounded-3xl  ${item.bg} text-center border border-[#01162752]/30`}>
                 <div className='flex justify-center '>
@@ -77,7 +77,7 @@ export default function page() {
 
                 <h2 className="text-2xl font-bold mt-4">{item.title}</h2>
                 <div className='mt-4'>
-                  {item.details && <h1 className="text-xl  font-normal items-center ">{item.details}</h1>}
+                  {item.details && <h1 className="text-lg  font-normal items-center ">{item.details}</h1>}
                   {item.links?.length > 0 && (
                     <div className="flex flex-col gap-y-3">
                       {item.links.map((link, index) => (
@@ -86,7 +86,7 @@ export default function page() {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block text-xl  font-normal items-center gap-2"
+                          className="block text-lg  font-normal items-center gap-2"
                         >
                           {link.text}
                         </a>
@@ -109,7 +109,7 @@ export default function page() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className='flex flex-col w-full md:w-10/12 xl:w-8/12 mx-auto gap-4 py-2.5 mt-4'>
+          <form onSubmit={handleSubmit} className='flex flex-col w-full md:w-10/12  mx-auto gap-4 py-2.5 mt-4'>
             <InputField
               label="Name"
               type="text"

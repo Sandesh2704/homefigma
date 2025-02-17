@@ -9,11 +9,9 @@ export default function Pricing() {
   return (
     <>
       <Section>
-        <div className="w-full flex justify-center">
-          <div className="sm:w-6/12 xl:w-4/12 text-center">
+          <div className="text-center">
             <SectionTitle title="Find the perfect plan that fits your budget" black={true} balance={true} center={true} />
           </div>
-        </div>
 
 
         <div className="flex flex-wrap justify-center xl:justify-between gap-6 xl:gap-0 py-8">

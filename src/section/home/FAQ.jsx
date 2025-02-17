@@ -15,9 +15,8 @@ export default function FAQ() {
             <Section>
                 <div className="grid lg:grid-cols-2 gap-7 xl:gap-12 overflow-hidden">
                     <div className='order-last lg:order-first '>
-                        <Paragraph text="Whether you're searching for the perfect tutor, browsing our FAQs, or exploring personalized learning solutions, we're here to support you. Our goal is to provide clear guidance and ensure your child's education journey is seamless and enriching"
-                        fontlarg={true} />
-                        <div className="space-y-3 mt-10 mb-4">
+                        <Paragraph text="Whether you're searching for the perfect tutor, browsing our FAQs, or exploring personalized learning solutions, we're here to support you. Our goal is to provide clear guidance and ensure your child's education journey is seamless and enriching" />
+                        <div className="space-y-3 mt-9">
                             {faqs.map((faq, index) => (
                                 <motion.button
                                     key={faq.id}
@@ -39,7 +38,7 @@ export default function FAQ() {
                                         {faq.question}
                                     </span>
                                     <motion.div
-                                        className={`p-2 md:p-3 text-xl lg:text-2xl rounded-full 
+                                        className={`p-2 md:p-3 text-xl rounded-full 
                                         ${selectedQuestion === faq.id ? "bg-[#2EC4B6]" : "bg-black text-white"}`}
                                         whileHover={{ rotate: 90 }}
                                         transition={{ duration: 0.2 }}
@@ -60,7 +59,7 @@ export default function FAQ() {
                             <h3 className="text-2xl font-medium mb-3">
                                 {faqs[selectedQuestion - 1].question}
                             </h3>
-                            <Paragraph text={faqs[selectedQuestion - 1].answer} fontlarg={true} />
+                            <Paragraph text={faqs[selectedQuestion - 1].answer}  />
                         </motion.div>
                     </div>
                 </div>
