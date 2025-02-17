@@ -27,7 +27,7 @@ export default function HeroSection2() {
     return (
         <>
 
-            <div className="mt-3">
+     
                 <Section>
                     <div className="grid xl:grid-cols-2 gap-5 bg-white overflow-hidden">
                         <div className="grid grid-cols-4 grid-rows-4 gap-y-2 md:gap-y-2.5 gap-x-2 md:gap-x-4 order-last xl:order-first">
@@ -88,7 +88,7 @@ export default function HeroSection2() {
                         </div>
                     </div>
                 </Section>
-            </div>
+         
         </>
     )
 }
