@@ -22,7 +22,6 @@ export default function Home() {
     AOS.init();
   }, []);
 
-
   return (
     <>
       <Head>
@@ -33,7 +32,7 @@ export default function Home() {
 
       <div>
         <div>
-          <HeroSection />
+        <HeroSection />
           <HeroSection2 />
           <Course />
           <Testimonial />

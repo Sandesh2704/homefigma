@@ -13,7 +13,7 @@ export default function FAQ() {
     return (
         <>
             <Section>
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-7 xl:gap-12 overflow-hidden">
                     <div className='order-last lg:order-first '>
                         <Paragraph text="Whether you're searching for the perfect tutor, browsing our FAQs, or exploring personalized learning solutions, we're here to support you. Our goal is to provide clear guidance and ensure your child's education journey is seamless and enriching"
                         fontlarg={true} />

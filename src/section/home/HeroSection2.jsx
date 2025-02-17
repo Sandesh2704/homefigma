@@ -32,7 +32,7 @@ export default function HeroSection2() {
                     <div className="grid xl:grid-cols-2 gap-5 bg-white overflow-hidden">
                         <div className="grid grid-cols-4 grid-rows-4 gap-y-2 md:gap-y-2.5 gap-x-2 md:gap-x-4 order-last xl:order-first">
                             <Image
-                                className="rounded-3xl object-cover w-full h-[430px] md:h-full col-span-2 row-span-4"
+                                className="rounded-3xl object-cover w-full h-[400px] md:h-full col-span-2 row-span-4"
                                 src="/assests/heroSection/8c4d92e9786756077e88b423410795d3.jpg"
                                 alt="Main Teacher"
                                 width={900}
@@ -59,7 +59,7 @@ export default function HeroSection2() {
                         <div className="px-6 py-12 border border-[#01162780] h-full rounded-[32px] order-first xl:order-last"  >
                             <div className='xl:pr-5 mb-3'>
                                 <div className={`flex justify-center w-full`}>
-                                    <p className={` text-balance text-black text-4xl leading-[3.2rem] font-[600] `}>
+                                    <p className={` text-balance text-black text-[37px] leading-[3rem]   font-[600] `}>
                                         {splittedText.map((current, i) => (
                                             <motion.span
                                                 key={i}
@@ -76,7 +76,7 @@ export default function HeroSection2() {
                                     </p>
                                 </div>
                             </div>
-                            <p className="text-lg lg:text-xl leading-[1.8rem] lg:leading-[2rem] mb-7 text-tertiary">
+                            <p className="text-lg leading-[2rem]  mb-7 text-tertiary">
                                 Unlock limitless learning opportunities on our platform with a wide variety of online courses. Dive into
                                 different topics and grow your skills at your own pace.
                             </p>

@@ -20,7 +20,7 @@ export default function SectionTitle({ title, black, balance, center }) {
 
     return (
         <div className={`${center ? "flex justify-center w-full" : ""}`}>
-            <p className={`text-4xl leading-[3.2rem] font-[600] 
+            <p className={`text-3xl leading-[2.6rem] font-[600] 
                 ${black ? 'text-black' : "text-white"} 
                 ${balance ? 'text-balance' : ""} 
                 ${center ? "text-center" : ""}`}>

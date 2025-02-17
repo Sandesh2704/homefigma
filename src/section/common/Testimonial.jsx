@@ -33,10 +33,10 @@ export default function Testimonial() {
           </div>
           <div className="relative flex justify-center bg-cover bg-center overflow-hidden">
             <div className="absolute inset-0 m-auto w-96 h-96 bg-[#2EC4B652] blur-[210px]" />
-            <div className="w-full xl:w-[75%] mx-auto mt-6">
+            <div className="w-full xl:w-[80%] mx-auto mt-6">
               <Slider {...settings}>
                 {testimonials.map((testimonial, index) => (
-                  <div key={index} className="px-5 md:px-10 xl:px-24 py-8">
+                  <div key={index} className="px-5 md:px-20 py-8">
                     <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-12">
                       <div className="relative py-8 px-3 rounded-3xl border-2 border-[#2EC4B6] md:-rotate-3 lg:-rotate-6">
                         <Image
@@ -61,7 +61,7 @@ export default function Testimonial() {
                         </div>
                       </div>
                       <div className="hidden md:flex flex-1 px-5 md:px-3">
-                        <p className="text-white text-lg lg:text-xl xl:text-2xl sm:leading-9 ">{testimonial.quote}</p>
+                        <p className="text-white text-lg lg:text-2xl sm:leading-8 ">{testimonial.quote}</p>
                       </div>
                     </div>
                   </div>

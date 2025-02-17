@@ -13,8 +13,6 @@ export default function Updates() {
             <Section color="#011627">
                 <div className="overflow-hidden">
                     <SectionTitle title="Latest Updates" />
-
-
                     <div className="grid xl:grid-cols-6 grid-rows-6  gap-x-4 md:gap-x-7 gap-y-6 mt-12 mb-4">
                         <div
                             className="relative flex flex-col h-full overflow-hidden group w-full col-span-3 row-span-6"

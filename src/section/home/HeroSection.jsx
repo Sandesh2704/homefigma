@@ -30,8 +30,8 @@ export default function HeroSection() {
 
     return (
         <Section>
-            <div className="grid xl:grid-cols-2 gap-14  overflow-hidden">
-                <div className=" lg:pr-10">
+            <div className="grid xl:grid-cols-2 gap-10  overflow-hidden">
+                <div className=" lg:pr-8">
                     <div className='pr-5 lg:pr-0'>
                     {splittedText.map((current, i) => (
                         <motion.span
@@ -41,17 +41,19 @@ export default function HeroSection() {
                             initial="initial"
                             animate={isInView ? 'animate' : ''}
                             custom={i}
-                            className="text-4xl leading-[54px] font-bold pr-2  inline-block"
+                            className="text-[37px] leading-[3rem]  font-[600]   pr-2  inline-block"
                         >
                             {current === '' ? <span>&nbsp;</span> : current}
                         </motion.span>
                     ))}
                     </div>
 
-                    <p className="text-lg lg:text-xl leading-[1.8rem] lg:leading-[2rem] font-normal text-tertiary mt-2 mb-7"
+                    <p className="text-lg leading-[2rem]  font-normal text-tertiary mt-3 mb-6"
                     >
                         Say goodbye to academic struggles and confusion. Our professional tutors ensure a personalized learning experience, empowering your child to excel every day.
                     </p>
+
+    
 
                     <div className="flex items-center space-x-6">
                         <Link href="/signin">
@@ -62,20 +64,20 @@ export default function HeroSection() {
                         </Link>
                     </div>
 
-                    <div className="flex flex-wrap justify-center md:justify-start gap-3.5 mt-12">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-3.5 mt-9">
                         {stats.map((items, index) => (
                             <div
                                 key={index}
                                 className={`text-center ${items.bg} py-[19px] px-[34px] border border-[#011627]/30 rounded-3xl`}
                             >
-                                <h6 className="text-xl font-normal mb-4">{items.label}</h6>
-                                <h3 className="text-3xl md:text-4xl font-semibold">{items.value}</h3>
+                                <h6 className="text-lg font-normal mb-3 md:mb-4">{items.label}</h6>
+                                <h3 className="text-3xl font-semibold">{items.value}+</h3>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-y-4 md:gap-y-5 gap-x-3 md:gap-x-4">
+                <div className="grid grid-cols-2 gap-y-4  gap-x-3 ">
                     <Image
                         src="/assests/heroSection/00bec2872c1d0f42d1c3565a5995a521.png"
                         alt="Main Teacher"

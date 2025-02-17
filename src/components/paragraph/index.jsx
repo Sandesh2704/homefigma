@@ -5,7 +5,7 @@ export default function Paragraph({ text, black, balance, fontlarg }) {
     <div className={`
        ${black ? 'text-gray-400' : " text-tertiary"}
         ${balance ? 'text-balance' : ""}
-        ${fontlarg ? 'text-base md:text-[18px] leading-[1.8rem] ' : "text-base md:text-base"}`}
+        ${fontlarg ? 'text-base md:text-[18px] leading-[1.8rem] ' : "text-base "}`}
     >{text}</div>
   )
 }

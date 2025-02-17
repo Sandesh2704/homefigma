@@ -16,9 +16,9 @@ export default function Pricing() {
         </div>
 
 
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8  xl:px-16 py-8">
+        <div className="flex flex-wrap justify-center xl:justify-between gap-6 xl:gap-0 py-8">
           {pricingPlans.map((plan, index) => (
-            <div key={index} className="w-full sm:w-[48%] md:w-[48%] xl:w-[30%] flex justify-center">
+            <div key={index} className="w-full sm:w-[48%] md:w-[48%] lg:w-[40%] xl:w-[32%]">
               <PricingCard plan={plan} />
             </div>
           ))}
@@ -56,7 +56,7 @@ const PricingCard = ({ plan }) => {
           <span className={`font-semibold ${plan.isPopular ? 'text-gray-300' : 'text-gray-800'}`}>${plan.price}</span>
           <span className={` ml-1 ${plan.isPopular ? 'text-gray-300' : 'text-gray-900'}`}>/month</span>
         </div>
-        <p className={`text-base lg:text-lg mt-5 ${plan.isPopular ? 'text-gray-300' : 'text-tertiary'}`}>
+        <p className={`text-base  mt-5 ${plan.isPopular ? 'text-gray-300' : 'text-tertiary'}`}>
           {plan.description}
         </p>
       </div>
@@ -70,7 +70,7 @@ const PricingCard = ({ plan }) => {
               ) : (
                 <RxCross2 className="bg-[#FF3366] text-white text-3xl p-2 flex-shrink-0 rounded-full" />
               )}
-              <span className={`text-base md:text-lg ${plan.isPopular ? 'text-white' : 'text-tertiary'}`}>
+              <span className={`text-base  ${plan.isPopular ? 'text-white' : 'text-tertiary'}`}>
                 {feature.text}
               </span>
             </li>

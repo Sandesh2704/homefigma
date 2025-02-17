@@ -2,8 +2,10 @@ import React from 'react'
 
 export default function Section({ children, color }) {
     return (
-        <section className='px-4 md:px-7  xl:px-14 py-10 lg:py-12' style={{ backgroundColor: color }}>
+        <section className='' style={{ backgroundColor: color }}>
+            <div className='max-w-6xl mx-auto px-4 xl:px-0  py-10 lg:py-12'>
             {children}
+            </div>
         </section>
     )
 }
