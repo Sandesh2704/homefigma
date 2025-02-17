@@ -3,14 +3,15 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { BsMenuApp, BsMenuButton } from 'react-icons/bs';
-
+import { RiMenuFill } from "react-icons/ri";
 
 const menuItems = [
   { href: '/blogs', title: 'blogs' },
   { href: '/about', title: 'about' },
   { href: '/contact', title: 'contact' },
   { href: '/classlisting', title: 'Class Listing' },
-  { href: '/signupdetailsfrom', title: 'Sign Updetails from ' },
+  { href: '/teacherdetailsfrom', title: 'Teacher details from (in working) ' },
+  {href: '/studentenorllfrom', title: 'student enroll details from (in working) ' },
   { href: '/teachersignup', title: 'Teacher signup' },
   { href: '/tutorslisting', title: 'Tutors Listing' }
 ];
@@ -22,8 +23,8 @@ export default function NavbarPopup() {
 
   return (
     <div className="fixed bottom-5 right-5 z-50">
-      <button onClick={toggleMenu} className="p-4 bg-blue-600 text-white rounded-full shadow-lg">
-        <span className='text-2xl'>  <BsMenuButton/>   </span>
+      <button onClick={toggleMenu} className="p-4 bg-blue-600 text-white rounded-full shadow">
+        <span className='text-2xl'>  <RiMenuFill/>   </span>
   
       </button>
       {isOpen && (

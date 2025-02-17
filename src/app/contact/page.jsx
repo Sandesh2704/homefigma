@@ -4,7 +4,6 @@ import Section from '@/components/section'
 import SectionTitle from '@/components/sectiontitle';
 import React, { useState } from 'react'
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
-import InputField from "../../components/inputField"
 import Button from '@/components/button';
 
 export default function page() {
@@ -93,9 +92,7 @@ export default function page() {
                       ))}
                     </div>
                   )}
-
                 </div>
-
               </div>
             ))}
           </div>
@@ -154,3 +151,19 @@ export default function page() {
       </main></>
   )
 }
+
+
+
+function InputField({ type, value, onChange, name, required, label }) {
+  return (
+    <input
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="py-3 px-4 border text-xl placeholder:text-xl border-[#011627] text-tertiary rounded-lg placeholder:text-tertiary  focus:ring-none focus:outline-none"
+      required={required}
+      placeholder={label}
+    />
+  );
+};
