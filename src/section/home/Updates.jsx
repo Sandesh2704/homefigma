@@ -13,7 +13,7 @@ export default function Updates() {
             <Section color="#011627">
                 <div className="overflow-hidden">
                     <SectionTitle title="Latest Updates" />
-                    <div className="grid xl:grid-cols-6 grid-rows-6  gap-x-4 md:gap-x-7 gap-y-6 mt-12 mb-4">
+                    <div className="grid xl:grid-cols-6 grid-rows-6  gap-x-4 md:gap-x-6 gap-y-5 mt-10">
                         <div
                             className="relative flex flex-col h-full overflow-hidden group w-full col-span-3 row-span-6"
                             data-aos="fade-up"
@@ -24,7 +24,7 @@ export default function Updates() {
                                 width={100}
                                 height={100}
                                 priority
-                                src="/assests/blog/20d838ab647cce1ba4660b9888db145e.jpg"
+                                src="/assests/blog/0eeb95c4bc6d7035a8553c7e7ed6c99b.jpg"
                                 alt="Wooden desk with typewriter"
                                 className="w-full h-full md:h-[390px] rounded-b-3xl sm:rounded-b-none rounded-t-3xl  relative z-0"
                             />
@@ -59,16 +59,17 @@ export default function Updates() {
                                     width={100}
                                     height={100}
                                     priority
-                                    src="/assests/blog/3ffba104a65172e47c851115f0ea8450.jpg"
+                                    src="/assests/blog/6aa6c9d0ff9ea524571bd1030bbf55c5.jpg"
                                     alt="Desk setup"
-                                    className="w-full md:w-[327px] h-full  px-2 object-cover rounded-3xl"
+                                    className="w-full md:w-[320px]   px-2 object-cover rounded-3xl"
                                 />
-                                <div className="md:flex-1">
-                                    <span className="text-white text-base">{update.date}</span>
-                                    <h3 className="text-white text-xl leading-8 font-semibold mt-2 md:text-balance mb-3">
+                                <div className="md:flex-1 px-5 xl:px-0">
+                                    <span className="text-white text-sm">{update.date}</span>
+                                    <h3 className="text-white text-lg leading-7 font-semibold mt-1 md:text-balance mb-2">
                                         {update.title}
                                     </h3>
-                                    <Paragraph text={update.description}  black={true}/>
+                                    {/* <Paragraph text={update.description}  black={true}/> */}
+                                    <p className='text-gray-400 text-sm leading-6'>{update.description}</p>
                                 </div>
                             </div>
                         ))}

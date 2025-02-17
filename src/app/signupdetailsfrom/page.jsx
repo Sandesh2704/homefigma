@@ -60,8 +60,10 @@ export default function Page() {
         </div>
 
 
-        <div className="flex justify-between mt-6">
-          {currentStep > 1 && (<button onClick={handlePrev} className="bg-gray-500 text-white px-4 py-2 rounded">Previous</button>)}
+        <div className="flex justify-evenly mt-10">
+          {currentStep > 1 && (
+            <button onClick={handlePrev} className="bg-gray-500 text-white px-4 py-2 rounded">Previous</button>)
+            }
           {currentStep < steps.length ? (
             <button onClick={handleNext} className="bg-blue-500 text-white px-4 py-2 rounded ml-auto">Next</button>
           ) : (
@@ -79,6 +81,78 @@ export default function Page() {
 
 
 function LocationForm({ handleChange, formData }) {
+
+  const [form, setForm] = useState({
+    tutoringMode: '',
+    preferredPlace: [''],
+    interestedInSchool: ''
+  });
+
+
+  return (
+    <div>
+      <div className='flex justify-center '>
+        <div className='w-9/12 text-center '>
+          <h2 className="text-xl  font-bold">Select Teaching Locations</h2>
+          <p className="mt-3 text-sm  text-gray-600">Please select your preferred teaching area, tutoring mode and place to teach. You can add as many locations as you like. Then click on Next to continue.</p>
+        </div>
+      </div>
+
+      <div className='mt-10 space-y-7'>
+
+
+      <div className='grid grid-cols-12 items-center gap-5'>
+        <label className='col-span-4 text-gray-500 text-sm text-right'>Select City:*</label>
+        <div className='col-span-3'>
+          <select name="city" value={form.city} onChange={handleChange} className='border px-3 py-2 rounded text-gray-500 text-sm w-full'>
+            <option value="">Select City</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="pune">Pune</option>
+            <option value="delhi">Delhi</option>
+            <option value="bangalore">Bangalore</option>
+          </select>
+        </div>
+      </div>
+
+
+        {/* Tutoring Mode */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-gray-500 text-sm text-right'>Tutoring Mode:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Checkbox label="Online" name="tutoringMode"  checked={form.preferredPlace.includes('online')} onChange={handleChange} />
+            <Checkbox label="Offline" name="tutoringMode"  checked={form.preferredPlace.includes('offline')} onChange={handleChange} />
+          </div>
+        </div>
+
+        {/* Preferred Place to Teach */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-gray-500 text-sm text-right'>Preferred Place to teach:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Checkbox label="Your Home" name="yourHome" checked={form.preferredPlace.includes('yourHome')} onChange={handleChange} />
+            <Checkbox label="Student Home" name="studentHome" checked={form.preferredPlace.includes('studentHome')} onChange={handleChange} />
+          </div>
+        </div>
+
+        {/* Interest in Teaching at Schools or Institutes */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-balance text-gray-500 text-sm text-right'>Are you interested to teach in School or Coaching Institutes?:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Radio label="Yes" name="interestedInSchool" value="yes" checked={form.interestedInSchool === 'yes'} onChange={handleChange} />
+            <Radio label="No" name="interestedInSchool" value="no" checked={form.interestedInSchool === 'no'} onChange={handleChange} />
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  );
+}
+
+
+
+
+
+function SubjectForm({ handleChange, formData }) {
 
   const [form, setForm] = useState({
     tutoringMode: '',
@@ -145,6 +219,146 @@ function LocationForm({ handleChange, formData }) {
     </div>
   );
 }
+
+
+function ProfileForm({ handleChange, formData }) {
+
+  const [form, setForm] = useState({
+    tutoringMode: '',
+    preferredPlace: [''],
+    interestedInSchool: ''
+  });
+
+
+  return (
+    <div>
+      <div className='flex justify-center '>
+        <div className='w-9/12 text-center '>
+          <h2 className="text-xl  font-bold">Select Teaching Locations</h2>
+          <p className="mt-3 text-sm  text-gray-600">Please select your preferred teaching area, tutoring mode and place to teach. You can add as many locations as you like. Then click on Next to continue.</p>
+        </div>
+      </div>
+
+      <div className='mt-10 space-y-7'>
+
+
+      <div className='grid grid-cols-12 items-center gap-5'>
+        <label className='col-span-4 text-gray-500 text-sm text-right'>Select City:*</label>
+        <div className='col-span-8'>
+          <select name="city" value={form.city} onChange={handleChange} className='border px-3 py-2 rounded text-gray-500 text-sm w-full'>
+            <option value="">Select City</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="pune">Pune</option>
+            <option value="delhi">Delhi</option>
+            <option value="bangalore">Bangalore</option>
+          </select>
+        </div>
+      </div>
+
+
+        {/* Tutoring Mode */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-gray-500 text-sm text-right'>Tutoring Mode:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Checkbox label="Online" name="tutoringMode"  checked={form.preferredPlace.includes('online')} onChange={handleChange} />
+            <Checkbox label="Offline" name="tutoringMode"  checked={form.preferredPlace.includes('offline')} onChange={handleChange} />
+          </div>
+        </div>
+
+        {/* Preferred Place to Teach */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-gray-500 text-sm text-right'>Preferred Place to teach:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Checkbox label="Your Home" name="yourHome" checked={form.preferredPlace.includes('yourHome')} onChange={handleChange} />
+            <Checkbox label="Student Home" name="studentHome" checked={form.preferredPlace.includes('studentHome')} onChange={handleChange} />
+          </div>
+        </div>
+
+        {/* Interest in Teaching at Schools or Institutes */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-balance text-gray-500 text-sm text-right'>Are you interested to teach in School or Coaching Institutes?:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Radio label="Yes" name="interestedInSchool" value="yes" checked={form.interestedInSchool === 'yes'} onChange={handleChange} />
+            <Radio label="No" name="interestedInSchool" value="no" checked={form.interestedInSchool === 'no'} onChange={handleChange} />
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  );
+}
+
+
+
+function VerificationForm({ handleChange, formData }) {
+
+  const [form, setForm] = useState({
+    tutoringMode: '',
+    preferredPlace: [''],
+    interestedInSchool: ''
+  });
+
+
+  return (
+    <div>
+      <div className='flex justify-center '>
+        <div className='w-9/12 text-center '>
+          <h2 className="text-xl  font-bold">Select Teaching Locations</h2>
+          <p className="mt-3 text-sm  text-gray-600">Please select your preferred teaching area, tutoring mode and place to teach. You can add as many locations as you like. Then click on Next to continue.</p>
+        </div>
+      </div>
+
+      <div className='mt-10 space-y-7'>
+
+
+      <div className='grid grid-cols-12 items-center gap-5'>
+        <label className='col-span-4 text-gray-500 text-sm text-right'>Select City:*</label>
+        <div className='col-span-8'>
+          <select name="city" value={form.city} onChange={handleChange} className='border px-3 py-2 rounded text-gray-500 text-sm w-full'>
+            <option value="">Select City</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="pune">Pune</option>
+            <option value="delhi">Delhi</option>
+            <option value="bangalore">Bangalore</option>
+          </select>
+        </div>
+      </div>
+
+
+        {/* Tutoring Mode */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-gray-500 text-sm text-right'>Tutoring Mode:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Checkbox label="Online" name="tutoringMode"  checked={form.preferredPlace.includes('online')} onChange={handleChange} />
+            <Checkbox label="Offline" name="tutoringMode"  checked={form.preferredPlace.includes('offline')} onChange={handleChange} />
+          </div>
+        </div>
+
+        {/* Preferred Place to Teach */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-gray-500 text-sm text-right'>Preferred Place to teach:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Checkbox label="Your Home" name="yourHome" checked={form.preferredPlace.includes('yourHome')} onChange={handleChange} />
+            <Checkbox label="Student Home" name="studentHome" checked={form.preferredPlace.includes('studentHome')} onChange={handleChange} />
+          </div>
+        </div>
+
+        {/* Interest in Teaching at Schools or Institutes */}
+        <div className='grid grid-cols-12 items-center gap-5'>
+          <label className='col-span-4 text-balance text-gray-500 text-sm text-right'>Are you interested to teach in School or Coaching Institutes?:*</label>
+          <div className='col-span-8 flex items-center gap-5'>
+            <Radio label="Yes" name="interestedInSchool" value="yes" checked={form.interestedInSchool === 'yes'} onChange={handleChange} />
+            <Radio label="No" name="interestedInSchool" value="no" checked={form.interestedInSchool === 'no'} onChange={handleChange} />
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  );
+}
+
 
 
 
