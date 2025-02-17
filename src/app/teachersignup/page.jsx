@@ -43,6 +43,7 @@ export default function page() {
         dots: false,
         infinite: true,
         speed: 500,
+        autoplaySpeed: 4000,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: false,
@@ -91,7 +92,7 @@ export default function page() {
                                                     src={`/assests/heroSection/c12c7f59a8a354143d29f7ed1349f148.jpg`}
                                                     alt={`testimonial ${item}`}
                                                     className="w-full h-[450px] object-cover md:h-[450px] sm:h-[350px]"
-                                                    width={1000} 
+                                                    width={1000}
                                                     height={1000}
                                                     priority
                                                 />
@@ -129,10 +130,10 @@ export default function page() {
 
                             <div className='flex flex-col gap-y-6 mt-12'>
                                 <div className='flex justify-center'>
-                                    <div className={`px-6 py-2 w-fit  text-center bg-secondary text-white flex items-center justify-center rounded-lg gap-2`} >
+                                    <Link href="/signupdetailsfrom" className={`px-6 py-2 w-fit  text-center bg-secondary text-white flex items-center justify-center rounded-lg gap-2`} >
                                         <span className='text-3xl'><TiSocialGooglePlus /></span>
                                         <h1 className='text-base font-[500]'>Login in with Google</h1>
-                                    </div>
+                                    </Link>
                                 </div>
 
                                 <div className='flex justify-center'>
@@ -178,9 +179,9 @@ export default function page() {
                                         I agree to the <strong>Terms &amp; Conditions</strong> and Privacy Policy and also authorize TheTuitionTeacher.com to contact me. This will override the registry with Dnc/Ndnc.
                                     </label>
                                     <div className='flex justify-center mt-5'>
-                                        <button >
+                                        <Link href="/signupdetailsfrom">
                                             <Button title="Sign In" />
-                                        </button>
+                                        </Link>
                                     </div>
 
                                     <div className='text-center text-sm leading-[1.4rem] text-gray-600 mt-7'>
@@ -195,7 +196,7 @@ export default function page() {
 
                 <Section>
                     <div className='md:px-10 xl:px-20'>
-                      <FaqComponent/>
+                        <FaqComponent />
                     </div>
                 </Section>
             </main>
