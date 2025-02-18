@@ -1,26 +1,16 @@
 "use client";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 import Section from "@/components/section";
 import SectionTitle from "@/components/sectiontitle";
 import Paragraph from "@/components/paragraph";
 import Button from "@/components/button";
 import { PasswordInput } from "@/components/form-input-field/page";
 
-function TokenFetcher({ setToken }) {
-    const searchParams = useSearchParams();
-    const token = searchParams.get("token");
 
-    // Pass token to the parent component
-    setToken(token);
-
-    return null;
-}
 
 export default function page() {
-    const [token, setToken] = React.useState(null);
+
 
     const { handleSubmit, control, formState: { errors }, watch } = useForm({
         defaultValues: {
@@ -45,19 +35,15 @@ export default function page() {
                             <Paragraph text="Create a new secure password" />
                         </div>
 
-                        {/* Wrap useSearchParams in Suspense */}
-                        <Suspense fallback={<p>Loading...</p>}>
-                            <TokenFetcher setToken={setToken} />
-                        </Suspense>
-
-                        {!token ? (
-                            <div className="text-center text-red-500">
+                    
+                       
+                            <div className="text-center text-red-500 my-12">
                                 <p>Invalid or expired reset link. Please request a new password reset.</p>
                                 <Link href="/forgot-password" className="text-blue-600 hover:underline mt-4 inline-block">
                                     Back to Forgot Password
                                 </Link>
                             </div>
-                        ) : (
+                       
                             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
                                 <PasswordInput
                                     name="password"
@@ -102,7 +88,7 @@ export default function page() {
                                     </Link>
                                 </div>
                             </form>
-                        )}
+                    
                     </div>
                 </div>
             </Section>
