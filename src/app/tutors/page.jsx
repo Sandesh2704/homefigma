@@ -27,6 +27,7 @@ export default function TutorPage() {
               priority />
 
 
+
             <div className='lg:px-4 py-3.5 flex-1 w-full flex-col'>
               <h2 className="text-xl font-semibold mb-4">Joshua Brown</h2>
               <Paragraph text="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
