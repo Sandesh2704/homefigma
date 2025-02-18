@@ -14,6 +14,7 @@ import { FaRegFolder, FaRegHeart, } from 'react-icons/fa';
 
 export default function page() {
 
+    const [isOpen, setIsOpen] = useState(false);
     const locations = ["All", "Default", "Onsite", "Online"];
     const courses = ["Joshua Brown", "John Smith", "Eliza Mic", "Holly Hunter", "Sammy King"];
     const prices = ["All", "Free", "Paid"];
@@ -39,11 +40,19 @@ export default function page() {
 
                         <div className='w-full lg:w-60 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
 
-                            <CheckboxList title="Location" items={locations} selectedItems={selectedLocations} toggleItem={(item) => toggleItem(setSelectedLocations, item)} />
+                            <div className="lg:hidden flex justify-between items-center px-4 py-3 border rounded-lg bg-white cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+                                <span className="text-lg font-semibold">Filters</span>
+                                <FiChevronDown className={`transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`} size={24} />
+                            </div>
 
-                            <CheckboxList title="Course taught" items={courses} selectedItems={selectedCourses} toggleItem={(item) => toggleItem(setSelectedCourses, item)} />
+                            <div className=''>
 
-                            <CheckboxList title="Price" items={prices} selectedItems={selectedPrices} toggleItem={(item) => toggleItem(setSelectedPrices, item)} />
+                                <CheckboxList title="Location" items={locations} selectedItems={selectedLocations} toggleItem={(item) => toggleItem(setSelectedLocations, item)} />
+
+                                <CheckboxList title="Course taught" items={courses} selectedItems={selectedCourses} toggleItem={(item) => toggleItem(setSelectedCourses, item)} />
+
+                                <CheckboxList title="Price" items={prices} selectedItems={selectedPrices} toggleItem={(item) => toggleItem(setSelectedPrices, item)} />
+                            </div>
 
                         </div>
 

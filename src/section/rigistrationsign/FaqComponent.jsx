@@ -47,8 +47,6 @@ export default function FaqComponent() {
                         </div>
                     </div>
                 ))}
-
-
             </div>
         </>
     )

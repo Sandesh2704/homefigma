@@ -6,14 +6,15 @@ import { BsMenuApp, BsMenuButton } from 'react-icons/bs';
 import { RiMenuFill } from "react-icons/ri";
 
 const menuItems = [
-  { href: '/blogs', title: 'blogs' },
-  { href: '/about', title: 'about' },
-  { href: '/contact', title: 'contact' },
-  { href: '/classlisting', title: 'Class Listing' },
-  { href: '/teacherdetailsfrom', title: 'Teacher details from (in working) ' },
-  {href: '/studentenorllfrom', title: 'student enroll details from (in working) ' },
-  { href: '/teachersignup', title: 'Teacher signup' },
-  { href: '/tutorslisting', title: 'Tutors Listing' }
+  
+  { href: '/blogs', title: 'blogs',  status : true },
+  { href: '/about', title: 'about',  status : true },
+  { href: '/contact', title: 'contact',  status : true },
+  { href: '/classlisting', title: 'Class Listing',  status : true },
+  { href: '/teacherdetailsfrom', title: 'Teacher details from (in working)',  status : true },
+  { href: '/studentenorllfrom', title: 'student enroll details from (in working)', status : true },
+  { href: '/teachersignup', title: 'Teacher signup', status : true },
+  { href: '/tutorslisting', title: 'Tutors Listing', status : true }
 ];
 
 export default function NavbarPopup() {

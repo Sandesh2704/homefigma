@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { RiCloseLargeLine } from 'react-icons/ri';
 import Link from 'next/link';
-import { Checkbox, Input, Radio, Select, TextArea } from '@/components/frominputs';
+import { Checkbox, Input, Radio, Select, TextArea } from '@/components/detail-form-inputs-field';
 
 export default function StudentEnrollmentForm() {
   const [currentStep, setCurrentStep] = useState(1);

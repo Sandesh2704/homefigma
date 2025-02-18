@@ -41,7 +41,7 @@ export default function Navbar() {
 </div>
 <div className='flex items-center gap-6'>
 
-  <Link href="/" className='hidden md:flex'>
+  <Link href="/login" className='hidden md:flex'>
     <Button title="Sign in" bgGreen={true} />
   </Link>
 
