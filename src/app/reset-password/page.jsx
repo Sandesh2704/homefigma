@@ -19,7 +19,7 @@ function TokenFetcher({ setToken }) {
     return null;
 }
 
-export default function ResetPasswordPage() {
+export default function page() {
     const [token, setToken] = React.useState(null);
 
     const { handleSubmit, control, formState: { errors }, watch } = useForm({
