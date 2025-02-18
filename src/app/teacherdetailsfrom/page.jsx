@@ -1,7 +1,5 @@
 "use client"
-import Button from '@/components/button';
 import Section from '@/components/section';
-import { FaCheck } from 'react-icons/fa';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { RiCloseLargeLine } from 'react-icons/ri';
@@ -99,15 +97,9 @@ export default function Page() {
           ))}
         </div>
         <div className='mt-12 lg:px-12 xl:px-20'>
-          {/* <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}> */}
-          <div className=''>
+          <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
             {renderStepContent()}
-          </div>
-
-          {/* </motion.div> */}
-
-
-
+          </motion.div>
           <div className="flex justify-between mt-12">
             {currentStep > 1 && (
               <button onClick={handlePrev} className="bg-gray-500 text-white px-4 py-2 rounded">Previous</button>)
@@ -157,8 +149,6 @@ export function ProfileForm({ handleChange, formData }) {
           </p>
         </div>
       </div>
-
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-12 xl:gap-x-32 mt-12">
 
         <div className="flex flex-col text-start items-center">
@@ -258,8 +248,6 @@ export function ProfileForm({ handleChange, formData }) {
           placeholder="Enter your complete address"
         />
 
-
-
         <Input
           label="Pin Code*"
           type="text"
@@ -291,8 +279,6 @@ export function ProfileForm({ handleChange, formData }) {
 }
 
 function VerificationForm({ handleChange, formData }) {
-
-
   const handleVerify = () => {
     alert(`Verifying code: ${formData.verificationCode}`);
   };
