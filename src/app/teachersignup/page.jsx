@@ -22,7 +22,16 @@ export default function Page() {
         setActiveIndex(index);
     };
 
-    const { handleSubmit, control, formState: { errors } } = useForm();
+    const { handleSubmit, control, formState: { errors } } = useForm(
+        {
+            defaultValues: {
+              name: "",
+              phone: "",
+              email: "",
+              password: ""
+            }
+          }
+    );
 
     const onSubmit = (data) => {
         console.log("Form Submitted:", data);
@@ -130,68 +139,56 @@ export default function Page() {
                                 </div>
 
                                 <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
-                                    <Controller
+
+                                    <InputField
                                         name="name"
+                                        label="Name"
+                                        type="text"
                                         control={control}
-                                        defaultValue=""
-                                        rules={{ required: 'Name is required' }}
-                                        render={({ field }) => (
-                                            <InputField2
-                                                label="Name"
-                                                type="text"
-                                                {...field}
-                                                error={errors.name}
-                                            />
-                                        )}
-                                    />
-                                    <Controller
+                                        rules={{ required: "Name is required" }}
+                                        errors={errors} />
+
+                                    <InputField
                                         name="phone"
+                                        label="Phone"
+                                        type="text"
                                         control={control}
-                                        defaultValue=""
-                                        rules={{ required: 'Phone is required', pattern: { value: /^[0-9]{10}$/, message: 'Invalid phone number' } }}
-                                        render={({ field }) => (
-                                            <InputField2
-                                                label="Phone"
-                                                type="tel"
-                                                {...field}
-                                                error={errors.phone}
-                                            />
-                                        )}
-                                    />
-                                    <Controller
+                                        rules={{
+                                            required: "Phone number is required",
+                                            pattern: { value: /^[0-9]+$/, message: "Invalid phone number" }
+                                        }}
+                                        errors={errors} />
+
+                                    <InputField
                                         name="email"
+                                        label="Email"
+                                        type="email"
                                         control={control}
-                                        defaultValue=""
-                                        rules={{ required: 'Email is required', pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, message: 'Invalid email address' } }}
-                                        render={({ field }) => (
-                                            <InputField2
-                                                label="Email"
-                                                type="email"
-                                                {...field}
-                                                error={errors.email}
-                                            />
-                                        )}
-                                    />
-                                    <Controller
+                                        rules={{
+                                            required: "Email is required",
+                                            pattern: {
+                                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                                message: "Invalid email address"
+                                            }
+                                        }}
+                                        errors={errors} />
+
+                                    <InputField
                                         name="password"
+                                        label="Password"
                                         control={control}
-                                        defaultValue=""
                                         rules={{ required: 'Password is required', minLength: { value: 6, message: 'Password must be at least 6 characters' } }}
-                                        render={({ field }) => (
-                                            <InputField2
-                                                label="Password"
-                                                type="password"
-                                                {...field}
-                                                error={errors.password}
-                                            />
-                                        )}
-                                    />
+                                        message="Invalid email address"
+                                        errors={errors} />
+
+
+
 
                                     <label className='text-center text-sm leading-[1.4rem] text-gray-600 mt-3'>
-                                        <input type="checkbox" required className='h-3 w-3 mr-2' />
+                                        <input type="checkbox" className='h-3 w-3 mr-2' />
                                         I agree to the <strong>Terms &amp; Conditions</strong> and Privacy Policy and also authorize TheTuitionTeacher.com to contact me. This will override the registry with Dnc/Ndnc.
                                     </label>
-                                    <button  type="submit" className='flex justify-center mt-5'>
+                                    <button type="submit" className='flex justify-center mt-5'>
                                         <Button title="Sign In" />
                                     </button>
 
@@ -214,19 +211,25 @@ export default function Page() {
     )
 }
 
- function InputField2({ type, value, onChange, name, required, label, error }) {
+
+
+
+function InputField({ name, label, control, rules, errors, type }) {
     return (
         <div>
-            <input
-                type={type}
+            <Controller
                 name={name}
-                value={value}
-                onChange={onChange}
-                className="py-3 px-4 w-full border text-lg bg-white text-tertiary rounded-lg placeholder:text-tertiary placeholder:text-base focus:ring-none focus:outline-none"
-                required={required}
-                placeholder={label}
+                control={control}
+                rules={rules}
+                render={({ field }) => (
+                    <input
+                        {...field}
+                        placeholder={label}
+                        type={type}
+                        className="py-3 px-4 w-full border text-lg bg-white text-tertiary rounded-lg placeholder:text-tertiary placeholder:text-base focus:ring-none focus:outline-none" />
+                )}
             />
-            {error && <span className="text-red-500 text-sm">{error.message}</span>}
+            {errors[name] && <p className="text-red-500 text-sm mt-1">{errors[name].message}</p>}
         </div>
     );
-};
+}
