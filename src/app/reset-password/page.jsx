@@ -29,13 +29,14 @@ export default function ResetPasswordPage() {
     return (
         <main>
             <Section>
-                <div className="max-w-md mx-auto py-10">
-                    <div className="text-center mb-8">
+            <div className="max-w-md mx-auto py-10">
+            <div className="bg-[#F5F5F5] py-8 px-4 md:px-8 h-full w-full ">
+                    <div className="text-center   mb-8 flex flex-col gap-y-5">
                         <SectionTitle title="Reset Your Password" black={true} />
                         <Paragraph text="Create a new secure password" />
                     </div>
 
-                    <div className="bg-[#F5F5F5] p-8 rounded-lg">
+                    <div className="">
                         {!token ? (
                             <div className="text-center text-red-500">
                                 <p>Invalid or expired reset link. Please request a new password reset.</p>
@@ -94,6 +95,7 @@ export default function ResetPasswordPage() {
                         )}
                     </div>
                 </div>
+            </div>
             </Section>
         </main>
     );

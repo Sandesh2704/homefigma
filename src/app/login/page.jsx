@@ -34,14 +34,14 @@ export default function page() {
                         </div>
 
                         <div className='mt-5'>
-                             <Image
-                                                                width={100}
-                                                                height={100}
-                                                                priority
-                                                                src="/assests/blog/6aa6c9d0ff9ea524571bd1030bbf55c5.jpg"
-                                                                alt="Desk setup"
-                                                                className="w-full  object-cover"
-                                                            />
+                            <Image
+                                width={100}
+                                height={100}
+                                priority
+                                src="/assests/blog/6aa6c9d0ff9ea524571bd1030bbf55c5.jpg"
+                                alt="Desk setup"
+                                className="w-full  object-cover"
+                            />
                         </div>
                     </div>
 

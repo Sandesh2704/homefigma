@@ -14,7 +14,6 @@ import { FaRegFolder, FaRegHeart, } from 'react-icons/fa';
 
 export default function page() {
 
-    const [isOpen, setIsOpen] = useState(false);
     const locations = ["All", "Default", "Onsite", "Online"];
     const courses = ["Joshua Brown", "John Smith", "Eliza Mic", "Holly Hunter", "Sammy King"];
     const prices = ["All", "Free", "Paid"];
@@ -39,21 +38,9 @@ export default function page() {
                     <div className='flex flex-col lg:flex-row  gap-y-8 gap-x-5'>
 
                         <div className='w-full lg:w-60 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-x-7 gap-y-8  h-fit lg:pr-4 xl:pr-6 lg:border-r border-[#00000033]/20'>
-
-                            <div className="lg:hidden flex justify-between items-center px-4 py-3 border rounded-lg bg-white cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-                                <span className="text-lg font-semibold">Filters</span>
-                                <FiChevronDown className={`transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`} size={24} />
-                            </div>
-
-                            <div className=''>
-
-                                <CheckboxList title="Location" items={locations} selectedItems={selectedLocations} toggleItem={(item) => toggleItem(setSelectedLocations, item)} />
-
-                                <CheckboxList title="Course taught" items={courses} selectedItems={selectedCourses} toggleItem={(item) => toggleItem(setSelectedCourses, item)} />
-
-                                <CheckboxList title="Price" items={prices} selectedItems={selectedPrices} toggleItem={(item) => toggleItem(setSelectedPrices, item)} />
-                            </div>
-
+                            <CheckboxList title="Location" items={locations} selectedItems={selectedLocations} toggleItem={(item) => toggleItem(setSelectedLocations, item)} />
+                            <CheckboxList title="Course taught" items={courses} selectedItems={selectedCourses} toggleItem={(item) => toggleItem(setSelectedCourses, item)} />
+                            <CheckboxList title="Price" items={prices} selectedItems={selectedPrices} toggleItem={(item) => toggleItem(setSelectedPrices, item)} />
                         </div>
 
                         <div className='flex flex-1  flex-col gap-5   w-full xl:p-2 h-full'>
@@ -103,7 +90,9 @@ export default function page() {
 
 
                                         <div className='text-center flex flex-col gap-y-2 mt-2'>
-                                            <h2 className="text-lg lg:text-xl font-semibold">{items.name}</h2>
+                                        <Link href={`/tutors`}> {/* Use `id` here */}
+                    <h2 className="text-lg lg:text-xl font-semibold cursor-pointer">{items.name}</h2>
+                </Link>
                                             <h3 className='text-base text-tertiary font-normal'>{items.role}</h3>
                                         </div>
                                     </div>
@@ -139,8 +128,6 @@ export default function page() {
                     </div>
                 </Section>
             </main>
-
-
         </>
     )
 }

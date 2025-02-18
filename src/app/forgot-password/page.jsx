@@ -22,12 +22,11 @@ export default function page() {
         <main>
             <Section>
                 <div className="max-w-md mx-auto py-10">
-                    <div className="text-center mb-8">
-                        <SectionTitle title="Forgot Your Password?" black={true} />
-                        <Paragraph text="Enter your email to receive a password reset link" />
-                    </div>
-
-                    <div className="bg-[#F5F5F5] p-8 rounded-lg">
+                    <div className="bg-[#F5F5F5] py-8 px-4 md:px-8 h-full w-full ">
+                        <div className="text-center mb-8 flex flex-col gap-y-5">
+                            <SectionTitle title="Forgot Your Password?" black={true} />
+                            <Paragraph text="Enter your email to receive a password reset link" />
+                        </div>
                         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
                             <InputField
                                 name="email"
